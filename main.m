@@ -9,10 +9,12 @@
 choice = 1;
 switch choice
     case 1
+        % Matrix de incidencia
         D = [-1 0; 1 -1; 0 1];
+        % Vectores de resistencias de las artistas
         rA = [1, 1];
+        % Intensidad de corriente exterior del circuito
         AIext = 1;
-        % p = single([1 ; 1]);
         identity = eye(size(rA),'like',rA);
         % Ax = [rA * eye(2), D'; D, zeros(2)];
     case 2
