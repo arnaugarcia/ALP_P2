@@ -5,11 +5,22 @@
 % Ver MatrizDeIncidencia.jpg para entender el funcionamiento de las aristas
 % y los nodos
 
-A = [-1 0; 1 -1; 0 1];
-choice = menu('Choose a ciruit to resolve', '1', '2', '3');
+% choice = menu('Choose a ciruit to resolve', '1', '2', '3');
+clear
+choice = 1;
 switch choice
     case 1
-        result = resistencia_graf(A, [1, 1);
+        % Matrix de incidencia del circuito 1
+        D = [-1 0; 1 -1; 0 1];
+        % Vectores de resistencias de las artistas
+        rA = [1, 1];
+        % Intensidad de corriente exterior del circuito
+        AIext = 1;
+        % Inversa
+        % si multipliquen una matriu per la seva inversa conseguirem la seva identitat
+        id = 1\rA;
+        zeros(size([3;3;));
+        % Ax = [id, D'; D, zeros(3)];
     case 2
         % Choise 2
     case 3

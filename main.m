@@ -6,17 +6,21 @@
 % y los nodos
 
 % choice = menu('Choose a ciruit to resolve', '1', '2', '3');
+clear
 choice = 1;
 switch choice
     case 1
-        % Matrix de incidencia
-        D = [-1 0; 1 -1; 0 1];
+        % Matrix de incidencia del circuito 1
+        AD = [-1 0; 1 -1; 0 1];
         % Vectores de resistencias de las artistas
-        rA = [1, 1];
+        Ar = [2, 1];
         % Intensidad de corriente exterior del circuito
-        AIext = 1;
-        identity = eye(size(rA),'like',rA);
-        % Ax = [rA * eye(2), D'; D, zeros(2)];
+        AIext = 3;
+        % Inversa
+        % si multipliquen una matriu per la seva inversa conseguirem la seva identitat
+        id = [Ar(:, end)\Ar; 2\Ar];
+        Ax = [id, AD'; AD, zeros(3)];
+        % resistencia_graf(AD, Ar, AIext);
     case 2
         % Choise 2
     case 3
