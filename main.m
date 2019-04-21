@@ -12,9 +12,8 @@ switch choice
         D = [-1 0; 1 -1; 0 1];
         rA = [1, 1];
         AIext = 1;
-        p = single([1 ; 1]);
-        size = size(p);
-        eye(size(p),'like',p);
+        % p = single([1 ; 1]);
+        identity = eye(size(rA),'like',rA);
         % Ax = [rA * eye(2), D'; D, zeros(2)];
     case 2
         % Choise 2
