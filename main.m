@@ -19,7 +19,11 @@ switch choice
         % Inversa
         % si multipliquen una matriu per la seva inversa conseguirem la seva identitat
         id = [Ar(:, end)\Ar; 1\Ar];
-        Ax = [id, AD'; AD, zeros(3)];
+        
+        % Getting the column size of the matrix
+        size = size(AD, 1);
+        
+        Ax = [id, AD'; AD, zeros(size)];
         % resistencia_graf(AD, Ar, AIext);
     case 2
         % Choise 2

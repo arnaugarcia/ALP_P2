@@ -11,16 +11,17 @@ choice = 1;
 switch choice
     case 1
         % Matrix de incidencia del circuito 1
-        D = [-1 0; 1 -1; 0 1];
+        AD = [-1 0; 1 -1; 0 1];
         % Vectores de resistencias de las artistas
-        rA = [1, 1];
+        Ar = [1, 1];
         % Intensidad de corriente exterior del circuito
         AIext = 1;
         % Inversa
         % si multipliquen una matriu per la seva inversa conseguirem la seva identitat
-        id = 1\rA;
-        zeros(size([3;3;));
-        % Ax = [id, D'; D, zeros(3)];
+        id = [Ar(:, end)\Ar; 1\Ar];
+        size = si
+        %Ax = [id, AD'; AD, zeros(size(AD(1)))];
+        % resistencia_graf(AD, Ar, AIext);
     case 2
         % Choise 2
     case 3
