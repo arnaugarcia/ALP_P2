@@ -5,11 +5,17 @@
 % Ver MatrizDeIncidencia.jpg para entender el funcionamiento de las aristas
 % y los nodos
 
-A = [-1 0; 1 -1; 0 1];
-choice = menu('Choose a ciruit to resolve', '1', '2', '3');
+% choice = menu('Choose a ciruit to resolve', '1', '2', '3');
+choice = 1;
 switch choice
     case 1
-        result = resistencia_graf(A, 2, 1);
+        D = [-1 0; 1 -1; 0 1];
+        rA = [1, 1];
+        AIext = 1;
+        p = single([1 ; 1]);
+        size = size(p);
+        eye(size(p),'like',p);
+        % Ax = [rA * eye(2), D'; D, zeros(2)];
     case 2
         % Choise 2
     case 3
