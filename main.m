@@ -2,6 +2,9 @@
 %Sergi Vidal
 %Arnau Garcia
 
+% Ver MatrizDeIncidencia.jpg para entender el funcionamiento de las aristas
+% y los nodos
+
 choice = menu('Choose a ciruit to resolve', '1', '2', '3');
 switch choice
     case '1'
