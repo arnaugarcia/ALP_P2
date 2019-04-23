@@ -3,8 +3,16 @@
 % Arnau Garcia
 
 function [R, Volt, Iint] = resistencia_graf(D, r, Iext)
-   Ax = [r * eye(r) D'; D zeros(r)];
-   R = 1;
-   Volt = 2;
-   Iint = 3;
+        % Inversa
+        % si multipliquen una matriu per la seva inversa conseguirem la seva identitat
+        id = [1\r; 2\r];
+        
+        % Getting the row size of the matrix
+        sizeMatrix = size(D, 1);
+        
+        Ax = [id, D'; D, zeros(sizeMatrix)];
+        
+        R = sum(r);
+        Volt = 1;
+        Iint = 3;
 end

@@ -1,6 +1,0 @@
-% Andres Martinez
-% Sergi Vidal
-% Arnau Garcia
-function [R, Volt, Iint] = resistencia_graf(D, r, Iext)
-   Ax = [r * eye(id) D'; D 0];ç
-end
