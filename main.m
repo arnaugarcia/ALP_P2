@@ -16,17 +16,9 @@ switch choice
         Ar = [2, 1];
         % Intensidad de corriente exterior del circuito
         AIext = 3;
-        % Inversa
-        % si multipliquen una matriu per la seva inversa conseguirem la seva identitat
-        id = [2\Ar; 1\Ar];
-        
-        % Getting the row size of the matrix
-        size = size(AD, 1);
-        
-        identity = eye(2,'like',AD);
-        
-        Ax = [id, AD'; AD, zeros(size)];
+               
         result = resistencia_graf(AD, Ar, AIext);
+       
     case 2
         % Choise 2
     case 3
