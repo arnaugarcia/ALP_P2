@@ -20,7 +20,13 @@ function [R, Volt, Iint] = resistencia_graf(D, r, Iext)
         
         zerosMatrix = zeros(sizeOrientedMatrix)
         
-        %A = [rId, Dt; D, zerosMatrix];
+        % Creamos el vector para la columna de las resistencias
+        intensityVector = zeros(1, columns)
+        voltsVector = zeros(1, sizeOrientedMatrix);
+        
+        voltsVector(1, 1) = 1;
+                        
+        A = [rId, Dt; D, zerosMatrix; intensityVector, voltsVector]
         
         R = 0;
         Volt = 1;
