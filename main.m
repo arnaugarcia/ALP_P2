@@ -7,17 +7,18 @@
 
 % choice = menu('Choose a ciruit to resolve', '1', '2', '3');
 clear
+clc
 choice = 1;
 switch choice
     case 1
         % Matrix de incidencia del circuito 1
-        AD = [-1 0; 1 -1; 0 1];
+        D = [-1 0; 1 -1; 0 1];
         % Vectores de resistencias de las artistas
-        Ar = [2, 1];
+        r = [2 1];
         % Intensidad de corriente exterior del circuito
-        AIext = 3;
-               
-        result = resistencia_graf(AD, Ar, AIext);
+        Iext = 3;
+        
+        result = resistencia_graf(D, r, Iext)
        
     case 2
         % Choise 2

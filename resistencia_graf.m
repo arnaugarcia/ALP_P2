@@ -3,19 +3,27 @@
 % Arnau Garcia
 
 function [R, Volt, Iint] = resistencia_graf(D, r, Iext)
-        
         % Getting the row size of the matrix
+        % TODO: rows = size(r, 1)
         [rows, columns] = size(r);
         
-        sizeOrientedMatrix = size(D);
+        D
         
-        Dt = transpose(D);
-        Id = eye(columns);
+        sizeOrientedMatrix = size(D, 1);
         
-        zerosMatrix = zeros(sizeOrientedMatrix);
+        Dt = transpose(D)
+        Id = eye(columns)
         
-        A = [r * Id, Dt; D, zerosMatrix];
+        % Se multiplica el vector de resistencias por su identidad
+        % .* por cada columna
+        rId = r .* Id
         
+        zerosMatrix = zeros(sizeOrientedMatrix)
         
+        %A = [rId, Dt; D, zerosMatrix];
+        
+        R = 0;
+        Volt = 1;
+        Iint = 0;
         
 end
