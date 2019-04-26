@@ -5,13 +5,17 @@
 function [R, Volt, Iint] = resistencia_graf(D, r, Iext)
         
         % Getting the row size of the matrix
-        sizeMatrix = size(D, 1);
+        [rows, columns] = size(r);
         
-        identity = D * pinv(D);
+        sizeOrientedMatrix = size(D);
         
-        Ax = [identity, D'; D, zeros(sizeMatrix)];
+        Dt = transpose(D);
+        Id = eye(columns);
         
-        R = sum(r);
-        Volt = 1;
-        Iint = 3;
+        zerosMatrix = zeros(sizeOrientedMatrix);
+        
+        A = [r * Id, Dt; D, zerosMatrix];
+        
+        
+        
 end
