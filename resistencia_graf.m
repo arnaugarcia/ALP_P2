@@ -28,12 +28,15 @@ function [R, Volt, Iint] = resistencia_graf(D, r, Iext)
                                 
         A = [rId, Dt; D, zerosMatrix; intensityVector, voltsVector]
         
-        b = [zeros(1, columns) -Iext zeros(size(D, 1) - 2, 1) Iext 0]
+        intensityZeros = zeros(1, columns);
+        voltZeros = transpose(zeros(size(D, 1) - 2, 1));
         
-        result = A\b.'
+        b = [intensityZeros -Iext voltZeros Iext 0]
         
-        Volt = result(columns + 1: end, 1)
-        Iint = result(1:columns,1)
-        R = abs(result(end)) / Iext
+        result = A\b.';
+        
+        Volt = result(columns + 1: end, 1);
+        Iint = result(1:columns,1);
+        R = abs(result(end)) / Iext;
         
 end
